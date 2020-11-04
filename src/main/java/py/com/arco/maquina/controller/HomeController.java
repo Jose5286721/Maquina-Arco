@@ -21,7 +21,7 @@ public class HomeController {
 	
 	@GetMapping("/light")
 	public String light() {
-		if(pin!=null) {
+		if(pin==null) {
 			GpioController gpioController = GpioFactory.getInstance();
 			pin = gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_05,"led",PinState.LOW);
 		}
